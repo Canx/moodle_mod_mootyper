@@ -22,8 +22,8 @@ function moveCursor(nextPos) {
 		$('#crka'+nextPos).addClass('txtModro');
 }
 
-// end of typing
-function doKonec() {
+// end of typing (endAttempt)
+function endAttempt() {
 	$('#crka'+(fullText.length-1)).addClass('txtZeleno');
 	$('#crka'+(fullText.length-1)).removeClass('txtModro');
 	$('#crka'+(fullText.length-1)).removeClass('txtRdece');
@@ -120,7 +120,7 @@ function keyPressed(e) {
 			$('#tb1').val($('#tb1').val()+currentChar);
 			var elemOff = new keyboardElement(currentChar);
 			elemOff.turnOff();
-			doKonec();
+			endAttempt();
 			return true;
 	    }
 	    
